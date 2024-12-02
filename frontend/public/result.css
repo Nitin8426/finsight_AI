@@ -1,0 +1,86 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Main heading style */
+h1 {
+    text-align: center;
+    color: #4a90e2;
+    margin-top: 240px;
+    font-size: 32px;
+}
+
+/* Subheadings style */
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Container for the uploaded data */
+div {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+/* Style for lists of analysis results */
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+ul li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+}
+
+/* Link style for returning to homepage */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 25px;
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    div, ul {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    ul li {
+        font-size: 16px;
+    }
+}

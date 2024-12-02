@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+    <h1>Financial Analysis Results for MSMEs</h1>
+    
+    <h2>Uploaded Data</h2>
+    <div>
+        {{ tables|safe }}
+    </div>
+
+    <h2>Analysis Summary</h2>
+    <ul>
+        {% for key, value in analysis.items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Insights and Predictions</h2>
+    <ul>
+        {% for insight in insights %}
+        <li>{{ insight }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="index.html">Analyze another file</a>
+</body>
+</html>
