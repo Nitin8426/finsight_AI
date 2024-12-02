@@ -4,7 +4,7 @@ import os
 import pandas as pd
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from analysis import analyze_financial_data
-from utils import allowed_file, check_missing_columns, ensure_upload_folder_exists, validate_data
+from utils import allowed_file, check_missing_columns, ensure_upload_folder_exists
 from database import save_analysis_results, fetch_analysis_results, init_db
 
 # Initialize Flask app

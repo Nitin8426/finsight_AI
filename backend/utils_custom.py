@@ -19,8 +19,6 @@ def check_missing_columns(df, required_columns):
     return missing_cols
 
 
-import os
-
 def ensure_upload_folder_exists(folder_path):
     """
     Ensure the upload folder exists, creating it if necessary.
@@ -67,6 +65,33 @@ def clean_numeric_columns(df, numeric_columns):
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
     return df
+
+def validate_data(df, required_columns):
+    """
+    Validate the DataFrame to ensure all required columns are present 
+    and contain valid data.
+
+    Parameters:
+        df (pandas.DataFrame): The uploaded data as a DataFrame.
+        required_columns (list): A list of required column names.
+
+    Returns:
+        bool: True if the data is valid, raises an exception otherwise.
+    """
+    missing_columns = check_missing_columns(df, required_columns)
+    if missing_columns:
+        raise ValueError(f"Missing required columns: {missing_columns}")
+    
+    # Add additional validations as needed
+    if df.empty:
+        raise ValueError("The DataFrame is empty.")
+    
+    # Example: Check for NaN values in required columns
+    for col in required_columns:
+        if df[col].isnull().any():
+            raise ValueError(f"Column {col} contains missing values.")
+    
+    return True
 
 def validate_file_size(filepath, max_size_mb=5):
     """
